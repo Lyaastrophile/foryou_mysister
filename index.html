@@ -122,20 +122,27 @@
       z-index: 1; /* pastikan footer terlihat di atas canvas */
     }
 
-    .caption-responsive {
+   .caption-responsive {
   position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   color: white;
   text-align: center;
-  background: rgba(0, 0, 0, 0.35); /* sedikit background supaya teks kelihatan */
+  background: rgba(0, 0, 0, 0.35);
   padding: 10px 15px;
   border-radius: 8px;
+  width: 80%;       /* lebar default bg */
+  max-width: 600px; /* maksimal biar nggak terlalu lebar di layar besar */
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-/* Responsive font */
+/* Responsive font dan lebar bg */
 @media (max-width: 576px) {
+  .caption-responsive {
+    width: 95%; /* bg hampir full screen tapi masih ada margin */
+  }
   .caption-responsive h5 {
     font-size: 1rem;
   }
@@ -497,3 +504,4 @@ btnHack.addEventListener('click', ()=>{
   </script>
 </body>
 </html>
+
